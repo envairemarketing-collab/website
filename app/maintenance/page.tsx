@@ -108,7 +108,6 @@ export default function MaintenancePage() {
         <p className="max-w-2xl mx-auto text-gray-300 mb-12 text-lg leading-relaxed">
           We're working hard to bring you an even better experience. 
           <br />
-          Our AI-powered platform will be back online shortly.
         </p>
 
         {/* Animated tech icons */}

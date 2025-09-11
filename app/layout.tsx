@@ -8,7 +8,7 @@ import { LanguageProvider } from "@/contexts/language-context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Envaire | AI Innovation",
+  title: "Envaire | Under Maintenance",
   description: "Empowering businesses with elegant AI solutions",
   generator: 'v0.dev',
   icons: {

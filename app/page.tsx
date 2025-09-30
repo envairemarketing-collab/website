@@ -30,7 +30,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-zinc-900 text-white relative overflow-hidden">
       {/* Enhanced mouse glow effect */}
       <div
         className="fixed hidden md:block pointer-events-none z-30 w-96 h-96 rounded-full opacity-40 transition-opacity duration-300"
@@ -275,16 +275,13 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 relative z-10 border-t border-gray-800">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">{t("footer.businessId")}: 3559524-3</p>
-          <div className="flex gap-6">
-            <Link href="/terms" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
-              {t("footer.termsOfService")}
-            </Link>
-            <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
-              {t("footer.privacyPolicy")}
-            </Link>
-          </div>
+        <div className="flex justify-center items-center gap-6">
+          <Link href="/terms" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
+            {t("footer.termsOfService")}
+          </Link>
+          <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
+            {t("footer.privacyPolicy")}
+          </Link>
         </div>
       </footer>
 

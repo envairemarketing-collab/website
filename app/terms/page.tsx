@@ -20,7 +20,7 @@ export default function TermsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-zinc-900 text-white relative overflow-hidden">
       {/* Mouse follower glow */}
       <div
         className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
@@ -113,18 +113,13 @@ export default function TermsPage() {
 
         {/* Footer */}
         <footer className="mt-16 border-t border-gray-800 pt-8">
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-4">
-              <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors">
-                {t("footer.termsOfService")}
-              </Link>
-              <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">
-                {t("footer.privacyPolicy")}
-              </Link>
-            </div>
-            <div className="text-gray-400">
-              {t("footer.businessId")} 1234567-8
-            </div>
+          <div className="max-w-4xl mx-auto flex justify-center items-center gap-4">
+            <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors">
+              {t("footer.termsOfService")}
+            </Link>
+            <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">
+              {t("footer.privacyPolicy")}
+            </Link>
           </div>
         </footer>
       </div>

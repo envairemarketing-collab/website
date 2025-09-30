@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Share2, Database, Mail, MessageSquare } from "lucide-react"
+import { Share2, Database, Mail, MessageSquare, FileText, Shield } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 export function ServicesSection() {
@@ -42,6 +42,20 @@ export function ServicesSection() {
       benefits: [t("services.agents.benefit1"), t("services.agents.benefit2"), t("services.agents.benefit3")],
       color: "from-green-600 to-emerald-500",
     },
+    {
+      icon: FileText,
+      title: t("services.seo.title"),
+      description: t("services.seo.description"),
+      benefits: [t("services.seo.benefit1"), t("services.seo.benefit2"), t("services.seo.benefit3")],
+      color: "from-emerald-500 to-green-500",
+    },
+    {
+      icon: Shield,
+      title: t("services.reputation.title"),
+      description: t("services.reputation.description"),
+      benefits: [t("services.reputation.benefit1"), t("services.reputation.benefit2"), t("services.reputation.benefit3")],
+      color: "from-green-500 to-emerald-600",
+    },
   ]
 
   return (
@@ -53,7 +67,7 @@ export function ServicesSection() {
         <p className="max-w-2xl mx-auto text-gray-300 text-lg">{t("services.description")}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {services.map((service, index) => {
           const Icon = service.icon
           return (

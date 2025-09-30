@@ -57,6 +57,18 @@ const translations = {
     "services.agents.benefit1": "24/7 multilingual support",
     "services.agents.benefit2": "Natural voice & text conversations",
     "services.agents.benefit3": "Seamless human handoff when needed",
+    "services.seo.title": "AI-Powered SEO Blog Automation",
+    "services.seo.description":
+      "Dominate search rankings with AI-generated, SEO-optimized blog content that drives organic traffic and establishes your authority. Automated content creation that ranks high and converts visitors into customers.",
+    "services.seo.benefit1": "SEO-optimized content that ranks",
+    "services.seo.benefit2": "Consistent publishing schedule",
+    "services.seo.benefit3": "Keyword research & optimization included",
+    "services.reputation.title": "Online Reputation Management",
+    "services.reputation.description":
+      "Protect and restore your brand's online reputation with AI-powered monitoring and response systems. Remove negative content, suppress bad reviews, and build a positive online presence that drives trust and sales.",
+    "services.reputation.benefit1": "24/7 reputation monitoring",
+    "services.reputation.benefit2": "Negative content suppression",
+    "services.reputation.benefit3": "Review management & response",
 
     // CTA Sections
     "cta1.title": "Ready to Transform Your Business?",
@@ -218,6 +230,18 @@ const translations = {
     "services.agents.benefit1": "24/7 monikielinen tuki",
     "services.agents.benefit2": "Luonnolliset ääni- ja tekstikeskustelut",
     "services.agents.benefit3": "Saumaton siirto ihmiselle tarvittaessa",
+    "services.seo.title": "Tekoälypohjainen SEO-blogiautomaatio",
+    "services.seo.description":
+      "Hallitse hakutuloksia tekoälyn tuottamalla, SEO-optimoidulla blogisisällöllä, joka kasvattaa orgaanista liikennettä ja vahvistaa auktoriteettisi. Automatisoitu sisällöntuotanto, joka sijoittuu korkealle ja muuttaa kävijät asiakkaiksi.",
+    "services.seo.benefit1": "SEO-optimoitu sisältö, joka rankataan",
+    "services.seo.benefit2": "Johdonmukainen julkaisuaikataulu",
+    "services.seo.benefit3": "Avainsanatutkimus & optimointi mukana",
+    "services.reputation.title": "Verkkoreputaation hallinta",
+    "services.reputation.description":
+      "Suojele ja palauta brändisi verkkoreputaatio tekoälypohjaisella valvonta- ja vastaamisjärjestelmällä. Poista negatiivista sisältöä, tukahduta huonoja arvosteluja ja rakenna positiivinen verkkoläsnäolo, joka herättää luottamusta ja kasvattaa myyntiä.",
+    "services.reputation.benefit1": "24/7 reputaation valvonta",
+    "services.reputation.benefit2": "Negatiivisen sisällön tukahduttaminen",
+    "services.reputation.benefit3": "Arvostelujen hallinta & vastaus",
 
     // CTA Sections
     "cta1.title": "Valmis muuttamaan liiketoimintaasi?",

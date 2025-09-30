@@ -51,7 +51,7 @@ const translations = {
     "services.email.benefit1": "Instant automated responses 24/7",
     "services.email.benefit2": "AI-powered lead qualification",
     "services.email.benefit3": "Smart follow-up sequences",
-    "services.agents.title": "AI Agents",
+    "services.agents.title": "Voice AI",
     "services.agents.description":
       "Deploy intelligent AI agents that handle customer support, sales calls, and conversations with human-like quality across voice and chat channels, reducing support costs by up to 70%.",
     "services.agents.benefit1": "24/7 multilingual support",

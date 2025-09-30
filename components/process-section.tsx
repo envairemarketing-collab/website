@@ -1,264 +1,226 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { Search, Wrench, Rocket } from "lucide-react"
+import { useState } from "react"
+import { Search, Wrench, Rocket, ArrowRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 export function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0)
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const sectionRef = useRef<HTMLElement>(null)
   const { t } = useLanguage()
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024)
-    }
-
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
 
   const steps = [
     {
       icon: Search,
+      number: "01",
       title: t("process.assess.title"),
       description: t("process.assess.description"),
-      details: [
+      highlights: [
         t("process.assess.detail1"),
         t("process.assess.detail2"),
-        t("process.assess.detail3"),
-        t("process.assess.detail4"),
       ],
+      color: "from-emerald-500 to-green-400",
     },
     {
       icon: Wrench,
+      number: "02",
       title: t("process.demos.title"),
       description: t("process.demos.description"),
-      details: [
+      highlights: [
         t("process.demos.detail1"),
         t("process.demos.detail2"),
-        t("process.demos.detail3"),
-        t("process.demos.detail4"),
       ],
+      color: "from-green-500 to-emerald-400",
     },
     {
       icon: Rocket,
+      number: "03",
       title: t("process.deploy.title"),
       description: t("process.deploy.description"),
-      details: [
+      highlights: [
         t("process.deploy.detail1"),
         t("process.deploy.detail2"),
-        t("process.deploy.detail3"),
-        t("process.deploy.detail4"),
       ],
+      color: "from-emerald-600 to-green-500",
     },
   ]
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return
-
-      const section = sectionRef.current
-      const rect = section.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-
-      // Calculate when section starts and ends being visible
-      const sectionTop = rect.top
-      const sectionBottom = rect.bottom
-      const sectionHeight = rect.height
-
-      // Define the scroll range where animation should happen - more generous range
-      const startTrigger = windowHeight * 0.9 // Start when section is 90% visible
-      const endTrigger = windowHeight * 0.1 // End when section is 10% from top
-
-      if (sectionTop <= startTrigger && sectionBottom >= endTrigger) {
-        // Section is in the animation zone
-        const totalScrollableHeight = sectionHeight + windowHeight * 0.8 // Extended scroll range
-        const scrolled = startTrigger - sectionTop
-        const progress = Math.max(0, Math.min(1, scrolled / totalScrollableHeight))
-
-        setScrollProgress(progress)
-
-        // Update active step based on progress (divide into thirds)
-        if (progress < 0.33) {
-          setActiveStep(0)
-        } else if (progress < 0.66) {
-          setActiveStep(1)
-        } else {
-          setActiveStep(2)
-        }
-      } else if (sectionTop > startTrigger) {
-        // Section hasn't entered animation zone
-        setScrollProgress(0)
-        setActiveStep(0)
-      } else if (sectionBottom < endTrigger) {
-        // Section has passed animation zone
-        setScrollProgress(1)
-        setActiveStep(2)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll() // Initial call
-
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
-    <section ref={sectionRef} id="process" className="container mx-auto px-4 py-16 md:py-24 relative z-10">
+    <section id="process" className="container mx-auto px-4 py-16 md:py-24 relative z-10">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
           {t("process.title")}
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-300 text-lg">{t("process.description")}</p>
+        <p className="max-w-3xl mx-auto text-gray-300 text-xl">{t("process.description")}</p>
       </div>
 
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12">
-          {/* Vertical Progress Bar - Left Side */}
-          <div className="hidden lg:flex lg:w-1/3 lg:flex-col lg:items-start lg:justify-start">
-            <div className="relative flex lg:flex-col flex-row lg:h-[800px] w-full lg:w-auto">
-              {/* Extended vertical connecting line */}
-              <div className="absolute lg:left-8 lg:top-8 lg:bottom-0 lg:w-1 lg:h-full top-8 left-8 right-8 h-1 w-auto bg-gray-700 rounded-full overflow-hidden">
-                <div
-                  className="bg-gradient-to-b lg:bg-gradient-to-b bg-gradient-to-r from-emerald-500 to-green-400 transition-all duration-300 ease-linear rounded-full relative"
-                  style={{
-                    [!isMobile ? "height" : "width"]: `${scrollProgress * 100}%`,
-                    boxShadow: scrollProgress > 0 ? "0 0 10px rgba(34, 197, 94, 0.8)" : "none",
-                  }}
-                >
-                  {/* Animated glow dot at the end of progress */}
-                  {scrollProgress > 0 && scrollProgress < 1 && (
-                    <div
-                      className="absolute lg:bottom-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:translate-y-1/2 right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-3 h-3 bg-emerald-400 rounded-full"
-                      style={{
-                        boxShadow: "0 0 15px rgba(34, 197, 94, 1), 0 0 30px rgba(34, 197, 94, 0.5)",
-                        animation: "pulse 2s infinite",
-                      }}
-                    />
-                  )}
-                </div>
-              </div>
+        {/* Desktop: Horizontal Timeline */}
+        <div className="hidden md:block">
+          {/* Connection Line */}
+          <div className="relative mb-16">
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-700 -translate-y-1/2 rounded-full" />
+            <div
+              className="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-emerald-500 to-green-500 -translate-y-1/2 rounded-full transition-all duration-500"
+              style={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
+            />
 
-              {/* Step indicators - positioned along the extended line */}
+            {/* Step Indicators */}
+            <div className="relative flex justify-between">
               {steps.map((step, index) => {
                 const Icon = step.icon
-                const stepThreshold = index / (steps.length - 1)
-                const isActive = scrollProgress >= stepThreshold || activeStep >= index
-                const isCurrent = index === activeStep
-
-                // Position steps evenly along the extended line
-                const stepPosition = (index / (steps.length - 1)) * 100
-
+                const isActive = index <= activeStep
                 return (
-                  <div
+                  <button
                     key={index}
-                    className={`absolute flex lg:flex-row flex-col items-center lg:mx-0 mx-8 z-10`}
-                    style={{
-                      [!isMobile ? "top" : "left"]: `${stepPosition}%`,
-                      [!isMobile ? "left" : "top"]: !isMobile ? "0" : "50%",
-                      transform: !isMobile ? "translateY(-50%)" : "translate(-50%, -50%)",
-                    }}
+                    onClick={() => setActiveStep(index)}
+                    className="group relative"
                   >
                     <div
-                      className={`w-16 h-16 rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
-                        isActive ? "border-emerald-500 bg-emerald-500/20" : "border-gray-600 bg-black/40"
-                      } ${isCurrent ? "scale-110" : ""}`}
+                      className={`w-20 h-20 rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
+                        isActive ? "border-emerald-500 bg-emerald-500/20 scale-110" : "border-gray-600 bg-black/80"
+                      }`}
                       style={{
-                        boxShadow: isActive ? "0 0 20px rgba(34, 197, 94, 0.5)" : "none",
+                        boxShadow: isActive ? "0 0 30px rgba(34, 197, 94, 0.5)" : "none",
                       }}
                     >
-                      <Icon
-                        className={`w-8 h-8 transition-colors duration-500 ${isActive ? "text-emerald-500" : "text-gray-400"}`}
-                      />
+                      <Icon className={`w-10 h-10 transition-colors ${isActive ? "text-emerald-400" : "text-gray-500"}`} />
                     </div>
-                    <div className="lg:ml-6 mt-4 lg:mt-0 text-center lg:text-left">
-                      <span
-                        className={`text-lg font-medium transition-colors duration-500 ${
-                          isActive ? "text-emerald-400" : "text-gray-500"
-                        }`}
-                      >
-                        {step.title}
-                      </span>
+
+                    {/* Number badge */}
+                    <div className={`absolute -top-2 -right-2 w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold transition-all ${
+                      isActive ? "border-emerald-500 bg-emerald-500 text-black" : "border-gray-600 bg-black text-gray-500"
+                    }`}>
+                      {step.number}
                     </div>
-                  </div>
+                  </button>
                 )
               })}
             </div>
           </div>
 
-          {/* Content Boxes - Right Side */}
-          <div className="lg:w-2/3 space-y-8">
+          {/* Active Step Content */}
+          <div className="relative">
             {steps.map((step, index) => {
               const Icon = step.icon
-              const isActive = index === activeStep
-              const isVisible = scrollProgress > 0
-
               return (
                 <div
                   key={index}
-                  className={`bg-black/40 border rounded-2xl p-8 relative overflow-hidden transition-all duration-500 ${
-                    isActive ? "border-emerald-500/50 bg-emerald-500/5" : "border-gray-800"
+                  className={`transition-all duration-500 ${
+                    activeStep === index ? "opacity-100 scale-100" : "opacity-0 scale-95 absolute inset-0 pointer-events-none"
                   }`}
-                  style={{
-                    opacity: isVisible ? 1 : 0.7,
-                    transform: isActive ? "scale(1.02)" : "scale(1)",
-                  }}
                 >
-                  {/* Background glow for active step */}
-                  {isActive && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-green-500/10 rounded-2xl" />
-                  )}
+                  <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-lg border-2 border-emerald-500/50 rounded-3xl p-10 relative overflow-hidden">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-5`} />
+                    <div className="absolute -top-20 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl" />
 
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div
-                        className={`w-12 h-12 rounded-full p-3 transition-all duration-500 ${
-                          isActive ? "bg-gradient-to-br from-emerald-500 to-green-400" : "bg-gray-700"
-                        }`}
-                        style={{
-                          boxShadow: isActive ? "0 0 20px rgba(34, 197, 94, 0.4)" : "none",
-                        }}
-                      >
-                        <Icon className={`w-full h-full ${isActive ? "text-black" : "text-gray-400"}`} />
-                      </div>
-                      <h3
-                        className={`text-2xl font-bold transition-colors duration-500 ${
-                          isActive ? "text-emerald-300" : "text-white"
-                        }`}
-                      >
-                        {step.title}
-                      </h3>
-                    </div>
-
-                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">{step.description}</p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {step.details.map((detail, detailIndex) => (
-                        <div
-                          key={detailIndex}
-                          className="flex items-center gap-3 p-3 bg-black/30 rounded-lg transition-all duration-300"
-                        >
-                          <div
-                            className={`w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-300 ${
-                              isActive ? "bg-emerald-500" : "bg-gray-500"
-                            }`}
-                            style={{
-                              boxShadow: isActive ? "0 0 8px rgba(34, 197, 94, 0.8)" : "none",
-                            }}
-                          />
-                          <span className="text-gray-300 text-sm">{detail}</span>
+                    <div className="relative z-10">
+                      <div className="flex items-start gap-8">
+                        <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${step.color} p-6 flex-shrink-0`}
+                          style={{ boxShadow: "0 0 40px rgba(34, 197, 94, 0.3)" }}>
+                          <Icon className="w-full h-full text-black" />
                         </div>
-                      ))}
+
+                        <div className="flex-1">
+                          <h3 className="text-4xl font-bold text-white mb-4">{step.title}</h3>
+                          <p className="text-xl text-gray-300 mb-8 leading-relaxed">{step.description}</p>
+
+                          <div className="grid grid-cols-2 gap-4">
+                            {step.highlights.map((highlight, hIndex) => (
+                              <div key={hIndex} className="flex items-center gap-3 bg-black/40 rounded-xl p-4 border border-gray-700/50">
+                                <div className="w-2 h-2 rounded-full bg-emerald-500" style={{ boxShadow: "0 0 10px rgba(34, 197, 94, 0.8)" }} />
+                                <span className="text-gray-200">{highlight}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Navigation */}
+                      <div className="flex items-center justify-between mt-8 pt-8 border-t border-gray-700/50">
+                        <button
+                          onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
+                          disabled={activeStep === 0}
+                          className="text-gray-400 hover:text-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                        >
+                          <ArrowRight className="rotate-180 w-5 h-5" />
+                          Previous
+                        </button>
+
+                        <div className="flex gap-2">
+                          {steps.map((_, idx) => (
+                            <div
+                              key={idx}
+                              className={`h-2 rounded-full transition-all ${
+                                idx === activeStep ? "w-8 bg-emerald-500" : "w-2 bg-gray-600"
+                              }`}
+                            />
+                          ))}
+                        </div>
+
+                        <button
+                          onClick={() => setActiveStep(Math.min(steps.length - 1, activeStep + 1))}
+                          disabled={activeStep === steps.length - 1}
+                          className="text-gray-400 hover:text-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                        >
+                          Next
+                          <ArrowRight className="w-5 h-5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               )
             })}
           </div>
+        </div>
+
+        {/* Mobile: Vertical Cards */}
+        <div className="md:hidden space-y-6">
+          {steps.map((step, index) => {
+            const Icon = step.icon
+            const isActive = index === activeStep
+            return (
+              <button
+                key={index}
+                onClick={() => setActiveStep(index)}
+                className={`w-full text-left transition-all duration-300 ${
+                  isActive ? "scale-100" : "scale-95 opacity-60"
+                }`}
+              >
+                <div className={`bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-lg border-2 rounded-3xl p-6 relative overflow-hidden ${
+                  isActive ? "border-emerald-500/50" : "border-gray-700"
+                }`}>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} ${isActive ? "opacity-5" : "opacity-0"}`} />
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} p-4`}>
+                        <Icon className="w-full h-full text-black" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-emerald-400 font-bold mb-1">Step {step.number}</div>
+                        <h3 className="text-2xl font-bold text-white">{step.title}</h3>
+                      </div>
+                    </div>
+
+                    {isActive && (
+                      <div className="mt-4 space-y-3">
+                        <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                        <div className="space-y-2">
+                          {step.highlights.map((highlight, hIndex) => (
+                            <div key={hIndex} className="flex items-center gap-2 text-sm text-gray-400">
+                              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                              {highlight}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </button>
+            )
+          })}
         </div>
       </div>
     </section>

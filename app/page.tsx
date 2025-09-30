@@ -276,7 +276,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 relative z-10 border-t border-gray-800">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">{t("footer.businessId")}: 3377350-1</p>
+          <p className="text-gray-400 text-sm">{t("footer.businessId")}: 3559524-3</p>
           <div className="flex gap-6">
             <Link href="/terms" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
               {t("footer.termsOfService")}

@@ -63,18 +63,15 @@ export default function PrivacyPage() {
               <div className="space-y-6">
                 <section>
                   <h2 className="text-2xl font-bold text-white mb-3">{t("privacy.section1.title")}</h2>
-                  <p className="text-gray-300 leading-relaxed mb-4">{t("privacy.section1.content")}</p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
                     <li>{t("privacy.section1.item1")}</li>
                     <li>{t("privacy.section1.item2")}</li>
                     <li>{t("privacy.section1.item3")}</li>
-                    <li>{t("privacy.section1.item4")}</li>
                   </ul>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold text-white mb-3">{t("privacy.section2.title")}</h2>
-                  <p className="text-gray-300 leading-relaxed mb-4">{t("privacy.section2.content")}</p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
                     <li>{t("privacy.section2.item1")}</li>
                     <li>{t("privacy.section2.item2")}</li>
@@ -94,26 +91,19 @@ export default function PrivacyPage() {
 
                 <section>
                   <h2 className="text-2xl font-bold text-white mb-3">{t("privacy.section5.title")}</h2>
-                  <p className="text-gray-300 leading-relaxed mb-4">{t("privacy.section5.content")}</p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li>{t("privacy.section5.item1")}</li>
-                    <li>{t("privacy.section5.item2")}</li>
-                    <li>{t("privacy.section5.item3")}</li>
-                  </ul>
+                  <p className="text-gray-300 leading-relaxed">{t("privacy.section5.content")}</p>
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold text-white mb-3">{t("privacy.contact.title")}</h2>
+                  <h2 className="text-2xl font-bold text-white mb-3">{t("privacy.section6.title")}</h2>
                   <p className="text-gray-300 leading-relaxed">
-                    {t("privacy.contact.content")}{" "}
-                    <a
-                      href="mailto:info@envaire.com"
-                      className="text-emerald-400 hover:text-emerald-300 underline"
-                    >
-                      info@envaire.com
-                    </a>
-                    .
+                    {t("privacy.section6.content")}
                   </p>
+                  <div className="mt-4 pl-4 text-gray-300">
+                    <p className="mb-1">Envaire</p>
+                    <p className="mb-1">{t("footer.businessId")}: 3559524-3</p>
+                    <p>Email: <a href="mailto:info@envaire.com" className="text-emerald-400 hover:text-emerald-300 underline">info@envaire.com</a></p>
+                  </div>
                 </section>
               </div>
             </div>
@@ -123,6 +113,9 @@ export default function PrivacyPage() {
         {/* Footer */}
         <footer className="mt-16 border-t border-gray-800 pt-8">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-gray-400">
+              {t("footer.businessId")}: 3559524-3
+            </div>
             <div className="flex items-center gap-4">
               <Link href="/terms" className="text-gray-400 hover:text-emerald-400 transition-colors">
                 {t("footer.termsOfService")}
@@ -130,9 +123,6 @@ export default function PrivacyPage() {
               <Link href="/privacy" className="text-gray-400 hover:text-emerald-400 transition-colors">
                 {t("footer.privacyPolicy")}
               </Link>
-            </div>
-            <div className="text-gray-400">
-              {t("footer.businessId")} 1234567-8
             </div>
           </div>
         </footer>

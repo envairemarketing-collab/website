@@ -71,7 +71,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
         timestamp: new Date().toISOString(),
       }
 
-      const response = await fetch("https://hook.eu2.make.com/m2m55kc9gr1pt52ettvqwcs2q6521m65", {
+      const response = await fetch("https://n8n.apps.envaire.com/webhook-test/a8b9cc05-4c69-409c-91a5-67d31c64857e", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

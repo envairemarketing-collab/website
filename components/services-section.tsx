@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Bot, Shield, Mic, MessageSquare } from "lucide-react"
+import { Share2, Database, Mail, MessageSquare } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 export function ServicesSection() {
@@ -11,35 +11,35 @@ export function ServicesSection() {
 
   const services = [
     {
-      icon: Bot,
-      title: t("services.automation.title"),
-      description: t("services.automation.description"),
+      icon: Share2,
+      title: t("services.social.title"),
+      description: t("services.social.description"),
       benefits: [
-        t("services.automation.benefit1"),
-        t("services.automation.benefit2"),
-        t("services.automation.benefit3"),
+        t("services.social.benefit1"),
+        t("services.social.benefit2"),
+        t("services.social.benefit3"),
       ],
       color: "from-emerald-500 to-green-400",
     },
     {
-      icon: Shield,
-      title: t("services.security.title"),
-      description: t("services.security.description"),
-      benefits: [t("services.security.benefit1"), t("services.security.benefit2"), t("services.security.benefit3")],
+      icon: Database,
+      title: t("services.data.title"),
+      description: t("services.data.description"),
+      benefits: [t("services.data.benefit1"), t("services.data.benefit2"), t("services.data.benefit3")],
       color: "from-green-500 to-emerald-400",
     },
     {
-      icon: Mic,
-      title: t("services.voice.title"),
-      description: t("services.voice.description"),
-      benefits: [t("services.voice.benefit1"), t("services.voice.benefit2"), t("services.voice.benefit3")],
+      icon: Mail,
+      title: t("services.email.title"),
+      description: t("services.email.description"),
+      benefits: [t("services.email.benefit1"), t("services.email.benefit2"), t("services.email.benefit3")],
       color: "from-emerald-600 to-green-500",
     },
     {
       icon: MessageSquare,
-      title: t("services.text.title"),
-      description: t("services.text.description"),
-      benefits: [t("services.text.benefit1"), t("services.text.benefit2"), t("services.text.benefit3")],
+      title: t("services.agents.title"),
+      description: t("services.agents.description"),
+      benefits: [t("services.agents.benefit1"), t("services.agents.benefit2"), t("services.agents.benefit3")],
       color: "from-green-600 to-emerald-500",
     },
   ]

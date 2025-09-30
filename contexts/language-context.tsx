@@ -30,33 +30,33 @@ const translations = {
     "nav.process": "Process",
 
     // Services Section
-    "services.title": "Our AI Services",
+    "services.title": "AI Automation Solutions That Drive Growth",
     "services.description":
-      "Cutting-edge AI solutions designed to transform your business operations with security and efficiency at the forefront.",
-    "services.automation.title": "Custom AI Automations",
-    "services.automation.description":
-      "Streamline your workflows with intelligent automation that learns and adapts to your business processes.",
-    "services.automation.benefit1": "Reduce manual tasks by 80%",
-    "services.automation.benefit2": "24/7 automated operations",
-    "services.automation.benefit3": "Seamless integration with existing systems",
-    "services.security.title": "Enterprise-Grade Security",
-    "services.security.description":
-      "Self-hosted solutions that keep your data secure within your infrastructure, meeting the highest compliance standards.",
-    "services.security.benefit1": "Complete data sovereignty",
-    "services.security.benefit2": "GDPR & SOC2 compliant",
-    "services.security.benefit3": "Zero third-party data sharing",
-    "services.voice.title": "Voice AI Agents",
-    "services.voice.description":
-      "Natural conversation AI that handles customer inquiries, support calls, and voice-based interactions with human-like quality.",
-    "services.voice.benefit1": "Natural speech processing",
-    "services.voice.benefit2": "Multi-language support",
-    "services.voice.benefit3": "Real-time conversation handling",
-    "services.text.title": "Text AI Agents",
-    "services.text.description":
-      "Intelligent chatbots and text processors that understand context, maintain conversation flow, and provide accurate responses.",
-    "services.text.benefit1": "Context-aware responses",
-    "services.text.benefit2": "Multi-channel deployment",
-    "services.text.benefit3": "Advanced NLP capabilities",
+      "Transform your business operations with intelligent automation that saves time, increases revenue, and eliminates repetitive work.",
+    "services.social.title": "Social Media Automation",
+    "services.social.description":
+      "Automate your LinkedIn, Instagram, Facebook, and TikTok presence with AI-powered content generation, community management, and intelligent DM responses that engage your audience 24/7.",
+    "services.social.benefit1": "AI content creation for all platforms",
+    "services.social.benefit2": "Automated DM & comment responses",
+    "services.social.benefit3": "Smart scheduling & community management",
+    "services.data.title": "Data Entry Automation",
+    "services.data.description":
+      "Perfect for e-commerce businesses. Our smart AI data processing eliminates hours of manual data entry work, ensuring accuracy while saving thousands in labor costs monthly.",
+    "services.data.benefit1": "Process thousands of entries in minutes",
+    "services.data.benefit2": "99.9% accuracy with AI validation",
+    "services.data.benefit3": "Seamless integration with your systems",
+    "services.email.title": "Email Automation & Lead Generation",
+    "services.email.description":
+      "Intelligent email systems that automatically respond to inquiries, qualify leads, and generate new business opportunities while you focus on closing deals.",
+    "services.email.benefit1": "Instant automated responses 24/7",
+    "services.email.benefit2": "AI-powered lead qualification",
+    "services.email.benefit3": "Smart follow-up sequences",
+    "services.agents.title": "Voice & Chat AI Agents",
+    "services.agents.description":
+      "Deploy intelligent AI agents that handle customer support, sales calls, and conversations with human-like quality across voice and chat channels, reducing support costs by up to 70%.",
+    "services.agents.benefit1": "24/7 multilingual support",
+    "services.agents.benefit2": "Natural voice & text conversations",
+    "services.agents.benefit3": "Seamless human handoff when needed",
 
     // CTA Sections
     "cta1.title": "Ready to Transform Your Business?",
@@ -191,33 +191,33 @@ const translations = {
     "nav.process": "Prosessi",
 
     // Services Section
-    "services.title": "Tekoälypalvelumme",
+    "services.title": "Tekoälyautomaatioratkaisut jotka kasvattavat liiketoimintaa",
     "services.description":
-      "Huippuluokan tekoälyratkaisut, jotka on suunniteltu muuttamaan liiketoimintaasi turvallisuuden ja tehokkuuden ollessa etusijalla.",
-    "services.automation.title": "Räätälöidyt tekoälyautomaatiot",
-    "services.automation.description":
-      "Virtaviivaista työnkulkujasi älykkäällä automaatiolla, joka oppii ja mukautuu liiketoimintaprosesseihisi.",
-    "services.automation.benefit1": "Vähennä manuaalisia tehtäviä 80%",
-    "services.automation.benefit2": "24/7 automaattiset toiminnot",
-    "services.automation.benefit3": "Saumaton integraatio olemassa oleviin järjestelmiin",
-    "services.security.title": "Yritystason turvallisuus",
-    "services.security.description":
-      "Itse isännöidyt ratkaisut, jotka pitävät tietosi turvassa infrastruktuurissasi ja täyttävät korkeimmat vaatimustenmukaisuusstandardit.",
-    "services.security.benefit1": "Täydellinen tietojen hallinta",
-    "services.security.benefit2": "GDPR ja SOC2 yhteensopiva",
-    "services.security.benefit3": "Ei kolmannen osapuolen tietojen jakamista",
-    "services.voice.title": "Ääni-tekoälyagentit",
-    "services.voice.description":
-      "Luonnollinen keskustelu-tekoäly, joka käsittelee asiakaskyselyjä, tukipuheluita ja äänipohjaisia vuorovaikutuksia ihmismäisellä laadulla.",
-    "services.voice.benefit1": "Luonnollinen puheen käsittely",
-    "services.voice.benefit2": "Monikielinen tuki",
-    "services.voice.benefit3": "Reaaliaikainen keskustelun käsittely",
-    "services.text.title": "Teksti-tekoälyagentit",
-    "services.text.description":
-      "Älykkäät chatbotit ja tekstinkäsittelijät, jotka ymmärtävät kontekstin, ylläpitävät keskustelun kulkua ja antavat tarkkoja vastauksia.",
-    "services.text.benefit1": "Kontekstitietoiset vastaukset",
-    "services.text.benefit2": "Monikanavainen käyttöönotto",
-    "services.text.benefit3": "Edistyneet NLP-ominaisuudet",
+      "Muuta liiketoimintasi tehokkuutta älykkäällä automaatiolla, joka säästää aikaa, kasvattaa liikevaihtoa ja eliminoi toistuvat työt.",
+    "services.social.title": "Sosiaalisen median automaatio",
+    "services.social.description":
+      "Automatisoi LinkedIn-, Instagram-, Facebook- ja TikTok-läsnäolosi tekoälypohjaisella sisällöntuotannolla, yhteisöhallinnalla ja älykkäillä DM-vastauksilla, jotka sitouttavat yleisöäsi 24/7.",
+    "services.social.benefit1": "Tekoälyn sisällöntuotanto kaikille alustoille",
+    "services.social.benefit2": "Automatisoidut DM- ja kommenttivastaukset",
+    "services.social.benefit3": "Älykäs aikataulutus & yhteisöhallinta",
+    "services.data.title": "Tietojen syöttöautomaatio",
+    "services.data.description":
+      "Täydellinen verkkokauppayrityksille. Älykäs tekoälypohjainen tietojenkäsittely eliminoi tunnit manuaalista työtä, taaten tarkkuuden ja säästäen tuhansia euroja työvoimakustannuksissa kuukausittain.",
+    "services.data.benefit1": "Käsittele tuhansia merkintöjä minuuteissa",
+    "services.data.benefit2": "99,9% tarkkuus tekoälyvalidoinnilla",
+    "services.data.benefit3": "Saumaton integraatio järjestelmiisi",
+    "services.email.title": "Sähköpostiautomaatio & liidit",
+    "services.email.description":
+      "Älykkäät sähköpostijärjestelmät, jotka vastaavat automaattisesti kyselyihin, kvalifioivat liidejä ja luovat uusia liiketoimintamahdollisuuksia, kun keskityt kauppojen sulkemiseen.",
+    "services.email.benefit1": "Välittömät automaattiset vastaukset 24/7",
+    "services.email.benefit2": "Tekoälypohjainen liidien kvalifiointi",
+    "services.email.benefit3": "Älykkäät seurantasekvenssit",
+    "services.agents.title": "Ääni- ja chat-tekoälyagentit",
+    "services.agents.description":
+      "Ota käyttöön älykkäät tekoälyagentit, jotka hoitavat asiakastukea, myyntipuheluita ja keskusteluja ihmismäisellä laadulla ääni- ja chat-kanavissa, vähentäen tukikustannuksia jopa 70%.",
+    "services.agents.benefit1": "24/7 monikielinen tuki",
+    "services.agents.benefit2": "Luonnolliset ääni- ja tekstikeskustelut",
+    "services.agents.benefit3": "Saumaton siirto ihmiselle tarvittaessa",
 
     // CTA Sections
     "cta1.title": "Valmis muuttamaan liiketoimintaasi?",

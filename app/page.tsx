@@ -30,7 +30,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-zinc-900 text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Enhanced mouse glow effect */}
       <div
         className="fixed hidden md:block pointer-events-none z-30 w-96 h-96 rounded-full opacity-40 transition-opacity duration-300"
@@ -46,11 +46,13 @@ export default function Home() {
       {/* Background pattern with enhanced green glow */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
-        <div className="absolute hidden md:block inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.25)_0,transparent_70%)] pointer-events-none" />
-        <div className="absolute hidden md:block -top-40 -left-40 w-96 h-96 bg-emerald-900/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute hidden md:block top-1/3 -right-20 w-96 h-96 bg-emerald-900/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute hidden md:block bottom-1/4 left-1/4 w-80 h-80 bg-green-900/20 rounded-full blur-3xl" />
-        <div className="absolute hidden md:block top-1/4 right-1/3 w-72 h-72 bg-emerald-800/25 rounded-full blur-2xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.35)_0,transparent_70%)] pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-emerald-500/40 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-green-500/40 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-emerald-400/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-1/3 w-[350px] h-[350px] bg-green-400/35 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-1/4 w-[300px] h-[300px] bg-emerald-500/25 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-2/3 left-10 w-[350px] h-[350px] bg-green-500/30 rounded-full blur-3xl" />
       </div>
 
       {/* Header - Oval/Pill Shape with Animated Border */}

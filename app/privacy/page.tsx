@@ -32,9 +32,10 @@ export default function PrivacyPage() {
       {/* Background pattern with enhanced green glow */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.15)_0,transparent_70%)] pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-emerald-900/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/3 -right-20 w-96 h-96 bg-emerald-900/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.35)_0,transparent_70%)] pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-emerald-500/40 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-green-500/40 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-emerald-400/30 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 py-8 relative z-10">
